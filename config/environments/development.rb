@@ -1,5 +1,10 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :test
+  host = 'https://36959e6a45d743799c9af588c5776e37.vfs.cloud9.us-east-1.amazonaws.com/' # ここをコピペすると失敗します。自分の環境に合わせてください。
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
